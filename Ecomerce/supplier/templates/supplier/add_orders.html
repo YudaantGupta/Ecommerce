@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ADD_ORDERS</h1>
+
+    <section class="add_order">
+        <form action="" method="POST" , enctype = "multipart/form-data">
+            {% csrf_token %}
+            {% comment %} <input type="text" name="name" id="name" placeholder="name" required><br>
+            <input type="number" name="price" id="price" placeholder="price" required><br>
+            <input type="number" name="amnt" id="amnt" placeholder="amnt" required><br>
+            <input type="number" name="disc" id="disc" placeholder="disc" required><br>
+            <input type="text" name="description" id="description" placeholder="description" required><br>
+            InStock<input type="radio" name="inStock" id="inStock" placeholder="inStock" ><br> {% endcomment %}
+            {{product_form.as_p}} 
+            <input type="submit" value="submit">
+        </form>
+    </section>
+</body>
+</html>

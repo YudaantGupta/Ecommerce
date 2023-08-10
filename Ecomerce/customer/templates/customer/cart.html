@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>
+        hello {{customer.customer_name}}
+    </h1>
+
+    {% if cart %}
+    <h1>YOUR TOTAL -> {{total}}</h1>
+
+    {% for i in cart %}
+    <p>{{i.product.name}}
+        {{i.price}}
+    <img src="/media/{{i.product.image}}" alt="red_apple" width=50 height=50> </p> <br>
+    <form action="" method ="post">
+        {% csrf_token %}
+        <input type="hidden" name= "itemid" value = {{i.id}}>
+        <input type="number" value="{{i.amount}}" name="amount" > 
+        <input type="submit" value = "update"></form>
+    {% endfor %}
+    
+    {% else %}
+    <p>your cart is empty , go to homepage <a href="/customer/home_page">here</a></p>
+
+    {% endif %}
+
+    <form action="/customer/checkout" method="get">
+        <br>
+        <input type="submit" value = "checkout">
+    </form>
+    
+
+    
+
+    
+</body>
+</html>

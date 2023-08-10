@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkout</title>
+</head>
+<body>
+    <h1>hello {{customer.customer_name}}</h1>
+
+    <h2> Your cart total is: {{cart.total}} $</h2>
+
+    <h3>Are u sure u want to order to this adress: <br><br>
+         state: {{customer.state}} <br>
+         city: {{customer.city}} <br>
+         building: {{customer.building}}  <br>
+         street: {{customer.street}} 
+
+         <p>want to change/add?  <a href="/customer/profile">click here</a></p>
+    </h3>
+
+
+    {% for i in cart.items.all %}
+    <p>{{i}} * {{i.amount}}<br></p>
+    {% endfor %}
+    
+    {{error}}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Order now">
+    </form>
+
+
+
+    
+</body>
+</html>

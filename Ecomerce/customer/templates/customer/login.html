@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/cda39c49f5.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Log in</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .form h1 {
+            position: absolute;
+            top: 20%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #d9d8d8;
+        }
+
+        label {
+            display: inline-block;
+        }
+
+        .inp1,
+        .inp2 {
+            border: 1px solid #BFC9CA;
+            height: fit-content;
+            width: fit-content;
+            margin: 10px;
+            border-radius: 7px;
+        }
+
+        label div {
+            border: none;
+            margin: 0;
+            padding: 15px;
+            color: #BFC9CA;
+        }
+
+        input {
+            height: 48px;
+            border: none;
+            border-left: 1px solid #BFC9CA;
+            background-color: none;
+            /* border-radius: 10px; */
+            transition: none;
+        }
+
+        .login {
+            background-color: white;
+            height: 70vh;
+            width: 55vw;
+            border-radius: 10px;
+            border: none;
+            box-shadow: 5px 5px 15px 10px #959a9a;
+            display: flex;
+        }
+
+        .form {
+            width: 50%;
+            /* background-color: blue; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid black;
+            /* border-radius: 10px; */
+        }
+
+        .inp3 {
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+
+        .inp3 label {
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        .inp3 .button {
+            height: 35px;
+            width: 75px;
+            border: 1px solid black;
+            border-radius: 10px;
+            background-color: transparent;
+            margin-left: 10%;
+            transition: 0.75s ease-in-out;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            border: none;
+            background-color: black;
+            color: white;
+        }
+
+        input:focus {
+            outline: 0;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        li a {
+            text-decoration: none;
+        }
+
+        .vector {
+            width: 50%;
+            height: 100%;
+            border: none;
+            /* border: 1px solid black; */
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vector img {
+            width: 100%;
+            /* height: 100%; */
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    
+    <section class="login">
+
+        <div class="form">
+            <h1>Log In</h1>
+            <form action="/customer/" class="form1" method="post">
+                {% csrf_token %}
+                <div class="inp1">
+                    <label for="contact">
+                        <div><i class="fa-regular fa-circle-user"></i></div>
+                    </label>
+                    <input placeholder="contact" type="number" id="contact" name="contact" required>
+                </div>
+
+                <div class="inp2">
+                    <label for="pass">
+                        <div><i class="fa-solid fa-lock-open"></i></div>
+                    </label>
+                    <input type="password" placeholder="Password" id="pass" name="password" required>
+                </div>
+
+                <div class="inp3">
+                    <input class="inp3" type="checkbox" name="remember" id="remember">
+                    <label for="remember">Remember me</label>
+                    <input type="submit" value="Login" class="button"></input>
+                </div>
+
+                <div class="bottom">
+                    <li>Create a account  <a href="/customer/signup">Register now</a></li>
+                </div>
+            </form>
+        </div>
+        <div class="vector">
+            <img src="./vector.jpg" alt="vector">
+        </div>
+    </section>
+</body>
+
+</html>
+
+{% comment %} if a variable from back end named 'Ahaan' exists. Print yudaant name 10 times or else do nothing {% endcomment %}
